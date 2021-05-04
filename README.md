@@ -63,3 +63,38 @@ Logic:
   2 + 2
     = 4
 ```
+
+## Generating the python library
+
+Operations is writted in python, but it, you must generate
+the python library for use in your python scripts, to generate
+the library I create a script to generate it, as this:
+
+```sh
+# First install it:
+./install.sh
+# Now generate the library
+./gen_lib.sh python3.9 # Specify the name of folder want to save the library, in my case is python3.9, but my python version is 3.9
+# The library is now generated, if you want to learn about the library, and how to use it, you must use the lib_manual.sh script, as this:
+./lib_manual.sh
+# The output is a sequence of commands to manipulate the app
+```
+
+## All procediment manually
+
+If you want to make all procediment manually, execute
+the next commands sequence:
+
+```sh
+# If you want to install
+sudo mkdir -p /opt/operations
+sudo cp -r ./* /opt/operations
+sudo chmod -R 777 /opt/operations /opt/operations/*
+sudo ln -s /opt/operations/operations /usr/bin/operations
+# If you want to uninstall:
+sudo rm -rf /opt/operations
+sudo rm /usr/bin/operations
+# If you want to generate the lib (first install operations):
+sudo ln -s /opt/operations $HOME/.local/lib/<python_version>/site-packages/operations
+# Now you want to use operations as the lib_manual.sh
+```

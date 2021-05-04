@@ -1,5 +1,5 @@
 from typing import Dict, Any
-from core.operator import Operator
+from .operator import Operator
 
 
 def main(**arguments: Dict[str, Any]) -> int:
